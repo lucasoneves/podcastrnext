@@ -18,7 +18,7 @@ export default function Player() {
           <div className={styles.slider}>
             <div className={styles.emptySlider} />
           </div>
-          <span>00:00</span>
+          <span>--:--</span>
         </div>
 
         <div className={styles.buttons}>
