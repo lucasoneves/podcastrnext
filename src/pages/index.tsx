@@ -39,9 +39,9 @@ export default function Home({ latestEpisodes, allEpisodes }) {
                   objectFit="cover"
                 />
 
-                <div className={styles.episodeDetails}>
+                <div className={styles.episodeDetail}>
                   <a href="">{episode.title}</a>
-                  <p>{episode.publishedAt}</p>
+                  <p>{episode.members}</p>
                   <span>{episode.publishedAt}</span>
                   <span>{episode.durationAsString}</span>
                 </div>
