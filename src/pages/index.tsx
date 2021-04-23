@@ -6,6 +6,8 @@ import ptBr from "date-fns/locale/pt-BR";
 import api from "../services/api";
 import { convertDurationToTimeString } from "../utils/convertDurationToTimeString";
 import styles from "./home.module.scss";
+import { useContext } from "react";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 type Episode = {
   id: string;
@@ -25,10 +27,11 @@ type HomeProps = {
 };
 
 export default function Home({ latestEpisodes, allEpisodes }) {
+  const player = useContext(PlayerContext)
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
-        <h2>Últimos lançamentos</h2>
+        <h2>Últimos lançamentos {player}</h2>
 
         <ul>
           {latestEpisodes.map((episode) => {
