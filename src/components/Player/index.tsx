@@ -34,6 +34,7 @@ export default function Player() {
           <strong>Selecione um podcast para ouvir</strong>
         </div>
       )}
+      
 
       <footer className={!episode ? styles.empty : ""}>
         <div className={styles.progress}>
@@ -51,6 +52,10 @@ export default function Player() {
           </div>
           <span>--:--</span>
         </div>
+
+       {episode && (
+          <audio src={episode.url} autoPlay />
+       ) } 
 
         <div className={styles.buttons}>
           <button type="button" disabled={!episode}>
