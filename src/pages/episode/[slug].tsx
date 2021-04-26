@@ -7,6 +7,7 @@ import api from "../../services/api";
 import Image from "next/image";
 import ptBR from "date-fns/locale/pt-BR";
 import styles from "./episode.module.scss";
+import { usePlayer } from "../../contexts/PlayerContext";
 type Episode = {
   id: string;
   title: string;
@@ -24,6 +25,9 @@ type EpisodeProps = {
 };
 
 export default function Episode({ episode }: EpisodeProps) {
+
+  const {play} = usePlayer();
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -43,7 +47,7 @@ export default function Episode({ episode }: EpisodeProps) {
           src={episode.thumbnail}
           objectFit="cover"
         />
-        <button>
+        <button onClick={() => play(episode)}>
           <img src="/play.svg" alt="Tocar episódio" />
         </button>
       </div>
