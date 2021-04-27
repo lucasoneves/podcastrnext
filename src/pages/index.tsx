@@ -81,7 +81,7 @@ export default function Home({ latestEpisodes, allEpisodes }) {
           <tbody>
             {allEpisodes.map((episode, index) => {
               return (
-                <tr>
+                <tr key={index}>
                   <td style={{ width: 72 }}>
                     <Image
                       width={120}
